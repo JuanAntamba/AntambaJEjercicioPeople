@@ -6,10 +6,13 @@ namespace People;
 public partial class MainPage : ContentPage
 {
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+        string dbPath = FileAccessHelper.GetLocalFilePath("people.db3");
+        statusMessage.Text = $"Ruta de la base de datos:\n{dbPath}"; 
+
+    }
 
     public void OnNewButtonClicked(object sender, EventArgs args)
     {

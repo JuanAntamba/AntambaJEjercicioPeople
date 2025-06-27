@@ -7,30 +7,38 @@
 
     <Grid Padding="5" RowSpacing="5" ColumnSpacing="5"
           RowDefinitions="Auto,Auto,Auto,Auto,*">
-        
-        
+
 
         <Entry x:Name="newPerson"
-           Placeholder="Enter name" />
+               Placeholder="Enter name"
+               Grid.Row="0" />
+
 
         <Button Text="Add Person"
-            Grid.Row="1"
-            Clicked="OnNewButtonClicked" />
+                Grid.Row="1"
+                Clicked="OnNewButtonClicked" />
+
 
         <Label x:Name="statusMessage"
-           TextColor="{StaticResource Primary}"
-           Grid.Row="2" />
+               TextColor="DarkBlue"
+               FontSize="12"
+               LineBreakMode="WordWrap"
+               VerticalOptions="Start"
+               Grid.Row="2" />
+
 
         <Button Text="Get All People"
-            Grid.Row="3"
-            Clicked="OnGetButtonClicked" />
+                Grid.Row="3"
+                Clicked="OnGetButtonClicked" />
 
-        <CollectionView x:Name="peopleList" Grid.Row="4">
+
+        <CollectionView x:Name="peopleList"
+                        Grid.Row="4">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Person">
                     <Grid ColumnDefinitions="*,2*">
-                        <Label Text="{Binding Id}" TextColor="{StaticResource Primary}"/>
-                        <Label Grid.Column="1" Text="{Binding Name}" TextColor="{StaticResource Primary}"/>
+                        <Label Text="{Binding Id}" TextColor="{StaticResource Primary}" />
+                        <Label Grid.Column="1" Text="{Binding Name}" TextColor="{StaticResource Primary}" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
@@ -39,3 +47,4 @@
     </Grid>
 
 </ContentPage>
+
